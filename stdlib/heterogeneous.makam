@@ -6,6 +6,10 @@ cons : A -> args B C -> args (A -> B) C.
 apply : [A] A -> args A B -> B -> prop.
 apply X [] X.
 apply X (HD :: TL) X' :- apply (X HD) TL X'.
+
+map_to_list : [Args] forall A (A -> C -> prop) -> args Args Result -> list C -> prop.
+map_to_list P [] [].
+map_to_list P (HD :: TL) (HD' :: TL') :- .apply P HD HD', map_to_list P TL TL'.
 %end.
 
 %extend dyn.

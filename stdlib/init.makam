@@ -29,6 +29,7 @@
 %use morerefl.
 %use heterogeneous.
 %use reify.
+%use concrete_reify.
 
 %use vars.
 
